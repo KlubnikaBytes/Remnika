@@ -1,4 +1,4 @@
-export type Language = 'en' | 'es' | 'fr'
+export type Language = 'en' | 'es' | 'fr' | 'de' | 'zh' | 'ja' | 'ar' | 'pt' | 'ru' | 'hi'
 
 export type TranslationKey =
     | 'dashboard.welcome'
