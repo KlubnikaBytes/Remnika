@@ -48,9 +48,9 @@ export const useAuthStore = create<AuthState>()(
 // --- Service ---
 
 export const authService = {
-    async login(phone: string, pin: string): Promise<User> {
+    async login(phone: string, _pin: string): Promise<User> {
         // In a real app, this would call the API
-        // return apiClient.post<User>('/auth/login', { phone, pin });
+        // return apiClient.post<User>('/auth/login', { phone, pin: _pin });
 
         // Mock response for now
         await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate delay
@@ -74,10 +74,11 @@ export const authService = {
 
     async signup(data: { name: string; email: string; phone: string }): Promise<void> {
         // await apiClient.post('/auth/signup', data);
+        console.log(data); // Use data to avoid unused var warning
         await new Promise(resolve => setTimeout(resolve, 1000));
     },
 
-    async verifyOtp(phone: string, otp: string): Promise<User> {
+    async verifyOtp(phone: string, _otp: string): Promise<User> {
         // const user = await apiClient.post<User>('/auth/verify-otp', { phone, otp });
         await new Promise(resolve => setTimeout(resolve, 1000));
 

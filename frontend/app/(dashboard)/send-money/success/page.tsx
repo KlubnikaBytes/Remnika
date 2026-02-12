@@ -51,8 +51,8 @@ export default function SuccessPage() {
             <div className="hidden print:block print:w-full print:max-w-3xl print:mx-auto print:p-8">
                 <div className="text-center border-b pb-8 mb-8">
                     <div className="flex justify-center mb-4">
-                        <div className="h-16 w-16 bg-indigo-600 rounded-xl flex items-center justify-center">
-                            <span className="text-white font-bold text-2xl">TS</span>
+                        <div className="h-16 w-16 bg-gradient-to-br from-[#c00101] to-[#8f0101] rounded-xl flex items-center justify-center">
+                            <span className="text-white font-bold text-2xl">R</span>
                         </div>
                     </div>
                     <h1 className="text-3xl font-bold text-gray-900">Transfer Receipt</h1>
@@ -108,8 +108,8 @@ export default function SuccessPage() {
                 </div>
 
                 <div className="mt-12 text-center text-gray-500 text-sm">
-                    <p>Thank you for using TapTap Send Clone!</p>
-                    <p className="mt-1">For support, please contact help@taptapsendclone.com</p>
+                    <p>Thank you for using Remnika!</p>
+                    <p className="mt-1">For support, please contact help@remnika.com</p>
                 </div>
             </div>
 
@@ -135,7 +135,7 @@ export default function SuccessPage() {
 
                     <div className="mt-8 space-y-3">
                         <Link href="/dashboard" onClick={reset}>
-                            <Button className="w-full bg-indigo-600 py-6 text-lg font-semibold hover:bg-indigo-700">
+                            <Button className="w-full bg-gradient-to-r from-[#c00101] to-[#8f0101] hover:from-[#a00101] hover:to-[#6f0000] py-6 text-lg font-semibold">
                                 <Home className="mr-2 h-5 w-5" />
                                 Return to Dashboard
                             </Button>

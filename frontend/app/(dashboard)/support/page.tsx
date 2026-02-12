@@ -20,7 +20,7 @@ export default function SupportPage() {
     return (
         <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
             {/* Header */}
-            <div className="bg-gradient-to-br from-indigo-600 to-purple-600 pb-24 pt-8 text-white">
+            <div className="bg-gradient-to-br from-[#c00101] to-[#8f0101] pb-24 pt-8 text-white">
                 <div className="container mx-auto px-4">
                     <div className="mb-8 flex items-center">
                         <Link href="/dashboard">
@@ -71,7 +71,7 @@ export default function SupportPage() {
                         </Card>
                         <Card className="border-0 shadow-lg transition-transform hover:scale-105">
                             <CardContent className="flex flex-col items-center p-6 text-center">
-                                <div className="mb-3 rounded-full bg-purple-100 p-3 text-purple-600">
+                                <div className="mb-3 rounded-full bg-rose-100 p-3 text-rose-600">
                                     <Mail className="h-6 w-6" />
                                 </div>
                                 <h3 className="font-semibold text-gray-900">Email</h3>

@@ -21,7 +21,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
             setLanguage(savedLang)
         }
         setMounted(true)
-    }, [])
+    }, [setLanguage])
 
     const handleSetLanguage = (lang: Language) => {
         setLanguage(lang)

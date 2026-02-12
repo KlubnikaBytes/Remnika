@@ -3,7 +3,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowLeft, Bell, Check, Shield, Tag, ArrowUpRight, ArrowDownLeft } from 'lucide-react'
+import { ArrowLeft, Shield, Tag, ArrowUpRight, ArrowDownLeft } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -18,7 +18,7 @@ export default function NotificationsPage() {
             time: '2 hours ago',
             read: false,
             icon: ArrowUpRight,
-            color: 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400'
+            color: 'bg-red-100 text-[#c00101] dark:bg-red-900/30 dark:text-red-400'
         },
         {
             id: 2,
@@ -38,7 +38,7 @@ export default function NotificationsPage() {
             time: '1 day ago',
             read: true,
             icon: Tag,
-            color: 'bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400'
+            color: 'bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400'
         },
         {
             id: 4,
@@ -65,7 +65,7 @@ export default function NotificationsPage() {
                             </Link>
                             <h1 className="text-xl font-bold">Notifications</h1>
                         </div>
-                        <Button variant="ghost" size="sm" className="text-indigo-600 hover:text-indigo-700">
+                        <Button variant="ghost" size="sm" className="text-[#c00101] hover:text-[#a00101]">
                             Mark all read
                         </Button>
                     </div>
@@ -100,12 +100,12 @@ export default function NotificationsPage() {
                                         </p>
                                         {!item.read && (
                                             <div className="mt-2 flex items-center gap-2">
-                                                <Badge variant="secondary" className="bg-indigo-50 text-indigo-600 hover:bg-indigo-100 dark:bg-indigo-900/20 dark:text-indigo-300">New</Badge>
+                                                <Badge variant="secondary" className="bg-red-50 text-[#c00101] hover:bg-red-100 dark:bg-red-900/20 dark:text-red-300">New</Badge>
                                             </div>
                                         )}
                                     </div>
                                     {!item.read && (
-                                        <div className="mt-2 h-2 w-2 rounded-full bg-indigo-600" />
+                                        <div className="mt-2 h-2 w-2 rounded-full bg-[#c00101]" />
                                     )}
                                 </CardContent>
                             </Card>

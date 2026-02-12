@@ -35,11 +35,11 @@ export default function TransactionsPage() {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-indigo-950">
+        <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-rose-50 dark:from-gray-950 dark:via-gray-900 dark:to-red-950">
             {/* Animated Background */}
             <div className="pointer-events-none fixed inset-0 overflow-hidden">
                 <motion.div
-                    className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-gradient-to-br from-blue-400/20 to-purple-400/20 blur-3xl"
+                    className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-gradient-to-br from-red-400/20 to-orange-400/20 blur-3xl"
                     animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
                     transition={{ duration: 20, repeat: Infinity }}
                 />
@@ -48,17 +48,17 @@ export default function TransactionsPage() {
             {/* Header */}
             <header className="relative border-b border-gray-200/50 bg-white/80 shadow-sm backdrop-blur-xl dark:border-gray-800/50 dark:bg-gray-900/80">
                 <div className="container mx-auto px-4">
-                    <div className="flex h-20 items-center justify-between">
+                    <div className="grid h-20 grid-cols-[auto_1fr_auto] items-center gap-4">
                         <Link href="/dashboard">
-                            <Button variant="ghost">
-                                <ArrowLeft className="mr-2 h-5 w-5" />
-                                Dashboard
+                            <Button variant="ghost" size="sm" className="pl-2 pr-2 sm:pl-4 sm:pr-4">
+                                <ArrowLeft className="h-5 w-5 sm:mr-2" />
+                                <span className="hidden sm:inline">Dashboard</span>
                             </Button>
                         </Link>
-                        <h1 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                        <h1 className="text-center text-xl font-bold bg-gradient-to-r from-[#c00101] to-[#8f0101] bg-clip-text text-transparent sm:text-2xl">
                             Transactions
                         </h1>
-                        <div className="w-24" /> {/* Spacer for centering */}
+                        <div className="w-10 sm:w-24" /> {/* Spacer */}
                     </div>
                 </div>
             </header>
@@ -70,11 +70,11 @@ export default function TransactionsPage() {
                         animate={{ opacity: 1, y: 0 }}
                     >
                         <Card className="overflow-hidden border-0 shadow-2xl">
-                            <CardHeader className="border-b border-gray-200 bg-gradient-to-br from-indigo-600 to-purple-600 p-6 text-white dark:border-gray-800">
+                            <CardHeader className="border-b border-gray-200 bg-gradient-to-br from-[#c00101] to-[#8f0101] p-6 text-white dark:border-gray-800">
                                 <CardTitle className="flex items-center gap-2 text-2xl">
                                     Transaction History
                                 </CardTitle>
-                                <p className="text-indigo-100">View all your money transfers</p>
+                                <p className="text-white/90">View all your money transfers</p>
                             </CardHeader>
                             <CardContent className="p-0">
                                 {transactions.map((tx, index) => (
@@ -88,10 +88,10 @@ export default function TransactionsPage() {
                                             href={`/transactions/${tx.id}`}
                                             className="block border-b border-gray-200 p-6 transition-colors last:border-0 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-900/50"
                                         >
-                                            <div className="flex items-center justify-between">
+                                            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                                                 <div className="flex items-center gap-4">
-                                                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-950 dark:to-purple-950">
-                                                        <TrendingUp className="h-7 w-7 text-indigo-600 dark:text-indigo-400" />
+                                                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-100 to-rose-100 dark:from-red-950 dark:to-rose-950">
+                                                        <TrendingUp className="h-7 w-7 text-[#c00101] dark:text-red-400" />
                                                     </div>
                                                     <div>
                                                         <p className="font-semibold text-gray-900 dark:text-white">{tx.recipient}</p>
@@ -102,7 +102,7 @@ export default function TransactionsPage() {
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <div className="text-right">
+                                                <div className="text-left sm:text-right">
                                                     <p className="font-bold text-gray-900 dark:text-white">
                                                         {tx.amount.toLocaleString('en-US')} {tx.currency}
                                                     </p>

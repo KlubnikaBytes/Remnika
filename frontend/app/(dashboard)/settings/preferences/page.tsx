@@ -50,7 +50,7 @@ export default function PreferencesPage() {
                         <CardContent className="divide-y divide-gray-100 p-0 dark:divide-gray-800">
                             <div className="flex items-center justify-between p-4">
                                 <div className="flex items-center gap-3">
-                                    <div className="rounded-full bg-blue-100 p-2 text-blue-600 dark:bg-blue-900 dark:text-blue-400">
+                                    <div className="rounded-full bg-red-100 p-2 text-[#c00101] dark:bg-red-900 dark:text-red-400">
                                         <Globe className="h-5 w-5" />
                                     </div>
                                     <div>
@@ -78,7 +78,7 @@ export default function PreferencesPage() {
 
                             <div className="flex items-center justify-between p-4">
                                 <div className="flex items-center gap-3">
-                                    <div className="rounded-full bg-green-100 p-2 text-green-600 dark:bg-green-900 dark:text-green-400">
+                                    <div className="rounded-full bg-orange-100 p-2 text-orange-600 dark:bg-orange-900 dark:text-orange-400">
                                         <DollarSign className="h-5 w-5" />
                                     </div>
                                     <div>
@@ -103,7 +103,7 @@ export default function PreferencesPage() {
                         <CardContent className="divide-y divide-gray-100 p-0 dark:divide-gray-800">
                             <div className="flex items-center justify-between p-4">
                                 <div className="flex items-center gap-3">
-                                    <div className="rounded-full bg-purple-100 p-2 text-purple-600 dark:bg-purple-900 dark:text-purple-400">
+                                    <div className="rounded-full bg-rose-100 p-2 text-rose-600 dark:bg-rose-900 dark:text-rose-400">
                                         <Bell className="h-5 w-5" />
                                     </div>
                                     <div>
@@ -113,7 +113,7 @@ export default function PreferencesPage() {
                                 </div>
                                 <button
                                     onClick={() => setPushEnabled(!pushEnabled)}
-                                    className={`relative h-6 w-11 rounded-full transition-colors ${pushEnabled ? 'bg-indigo-600' : 'bg-gray-200 dark:bg-gray-700'}`}
+                                    className={`relative h-6 w-11 rounded-full transition-colors ${pushEnabled ? 'bg-[#c00101]' : 'bg-gray-200 dark:bg-gray-700'}`}
                                 >
                                     <span className={`absolute top-1 left-1 h-4 w-4 rounded-full bg-white transition-transform ${pushEnabled ? 'translate-x-5' : 'translate-x-0'}`} />
                                 </button>
@@ -131,7 +131,7 @@ export default function PreferencesPage() {
                                 </div>
                                 <button
                                     onClick={() => setEmailEnabled(!emailEnabled)}
-                                    className={`relative h-6 w-11 rounded-full transition-colors ${emailEnabled ? 'bg-indigo-600' : 'bg-gray-200 dark:bg-gray-700'}`}
+                                    className={`relative h-6 w-11 rounded-full transition-colors ${emailEnabled ? 'bg-[#c00101]' : 'bg-gray-200 dark:bg-gray-700'}`}
                                 >
                                     <span className={`absolute top-1 left-1 h-4 w-4 rounded-full bg-white transition-transform ${emailEnabled ? 'translate-x-5' : 'translate-x-0'}`} />
                                 </button>

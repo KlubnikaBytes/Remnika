@@ -33,7 +33,7 @@ export function MultiCurrencyWallet() {
 
     if (isLoading || !balances) {
         return (
-            <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-indigo-600 to-purple-600 shadow-2xl shadow-indigo-500/20">
+            <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-[#c00101] to-[#8f0101] shadow-2xl shadow-[#c00101]/20">
                 <CardContent className="p-8">
                     <div className="flex h-48 items-center justify-center">
                         <div className="h-8 w-8 animate-spin rounded-full border-4 border-white/30 border-t-white" />
@@ -46,15 +46,15 @@ export function MultiCurrencyWallet() {
     const currentBalance = balances[currentIndex]
 
     return (
-        <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-indigo-600 to-purple-600 shadow-2xl shadow-indigo-500/20">
+        <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-[#c00101] to-[#8f0101] shadow-2xl shadow-[#c00101]/20">
             {/* Background Decorations */}
             <div className="absolute top-0 right-0 -mr-16 -mt-16 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
-            <div className="absolute bottom-0 left-0 -ml-16 -mb-16 h-64 w-64 rounded-full bg-purple-500/20 blur-3xl" />
+            <div className="absolute bottom-0 left-0 -ml-16 -mb-16 h-64 w-64 rounded-full bg-red-500/20 blur-3xl" />
 
             <CardContent className="relative p-8 text-white">
                 <div className="mb-6 flex items-center justify-between">
                     <div>
-                        <p className="font-medium text-indigo-100">Total Balance</p>
+                        <p className="font-medium text-white/90">Total Balance</p>
                         <div className="mt-1 flex items-center gap-2">
                             <span className="text-2xl">{currentBalance.flag}</span>
                             <span className="text-sm font-semibold opacity-90">{currentBalance.currency} Wallet</span>

@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TapTap Send Clone",
+  title: "Remnika",
   description: "Fast, simple, and secure money transfers",
 };
 
@@ -29,9 +29,14 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
-          {children}
+          <div className="flex min-h-screen flex-col">
+            <div className="flex-1">{children}</div>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>
   );
 }
+
+import { Footer } from "@/components/layout/footer";

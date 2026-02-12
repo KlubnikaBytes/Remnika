@@ -38,7 +38,7 @@ export default function SecurityPage() {
                 <Card>
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2">
-                            <Lock className="h-5 w-5 text-indigo-600" />
+                            <Lock className="h-5 w-5 text-[#c00101]" />
                             Authentication
                         </CardTitle>
                     </CardHeader>
@@ -68,7 +68,7 @@ export default function SecurityPage() {
                             </div>
                             <button
                                 onClick={() => setBiometricsEnabled(!biometricsEnabled)}
-                                className={`relative h-6 w-11 rounded-full transition-colors ${biometricsEnabled ? 'bg-indigo-600' : 'bg-gray-200 dark:bg-gray-700'}`}
+                                className={`relative h-6 w-11 rounded-full transition-colors ${biometricsEnabled ? 'bg-[#c00101]' : 'bg-gray-200 dark:bg-gray-700'}`}
                             >
                                 <span className={`absolute top-1 left-1 h-4 w-4 rounded-full bg-white transition-transform ${biometricsEnabled ? 'translate-x-5' : 'translate-x-0'}`} />
                             </button>

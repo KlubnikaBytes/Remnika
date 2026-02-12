@@ -1,7 +1,7 @@
 
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -16,10 +16,13 @@ export default function ConfirmTransferPage() {
     const [isLoading, setIsLoading] = useState(false)
 
     // Redirect if no recipient selected (should have come from recipient page)
-    if (!recipient) {
-        router.push('/send-money/recipient')
-        return null
-    }
+    useEffect(() => {
+        if (!recipient) {
+            router.push('/send-money/recipient')
+        } else if (!quote) {
+            router.push('/send-money')
+        }
+    }, [recipient, quote, router])
 
     const handleConfirm = () => {
         if (!recipient) return
@@ -31,8 +34,7 @@ export default function ConfirmTransferPage() {
         }, 2000)
     }
 
-    if (!quote) {
-        router.push('/send-money')
+    if (!recipient || !quote) {
         return null
     }
 

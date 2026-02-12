@@ -94,7 +94,7 @@ export function CurrencyConversionModal({ isOpen, onClose, sourceBalance }: Curr
                         {/* Arrow */}
                         <div className="relative flex justify-center -my-3 z-10">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md border border-gray-100 dark:bg-gray-800 dark:border-gray-700">
-                                <ArrowDown className="h-5 w-5 text-indigo-600" />
+                                <ArrowDown className="h-5 w-5 text-[#c00101]" />
                             </div>
                         </div>
 
@@ -115,13 +115,13 @@ export function CurrencyConversionModal({ isOpen, onClose, sourceBalance }: Curr
                         </div>
 
                         {/* Rate Info */}
-                        <div className="flex items-center justify-between rounded-xl bg-indigo-50 px-4 py-3 text-sm text-indigo-700 dark:bg-indigo-950/30 dark:text-indigo-300">
+                        <div className="flex items-center justify-between rounded-xl bg-red-50 px-4 py-3 text-sm text-[#8f0101] dark:bg-red-950/30 dark:text-red-300">
                             <span className="font-medium">Exchange Rate</span>
                             <span className="font-bold">1 {sourceCountry.currency} = {rate} {targetCountry.currency}</span>
                         </div>
 
                         <Button
-                            className="w-full rounded-xl bg-indigo-600 py-6 text-lg font-semibold hover:bg-indigo-700"
+                            className="w-full rounded-xl bg-[#c00101] py-6 text-lg font-semibold hover:bg-[#a00101]"
                             onClick={handleConvert}
                             disabled={!amount || parseFloat(amount) <= 0 || isLoading}
                         >

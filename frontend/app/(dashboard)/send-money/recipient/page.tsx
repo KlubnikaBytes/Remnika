@@ -1,7 +1,7 @@
 
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -55,8 +55,13 @@ export default function RecipientPage() {
     }
 
     // Redirect if no quote (user jumped here directly)
+    useEffect(() => {
+        if (!quote) {
+            router.push('/send-money')
+        }
+    }, [quote, router])
+
     if (!quote) {
-        router.push('/send-money')
         return null
     }
 
@@ -80,8 +85,8 @@ export default function RecipientPage() {
                 <div className="mx-auto max-w-lg">
                     {/* Steps Indicator */}
                     <div className="mb-8 flex justify-center gap-2">
-                        <div className="h-2 w-8 rounded-full bg-indigo-600"></div>
-                        <div className="h-2 w-8 rounded-full bg-indigo-600"></div>
+                        <div className="h-2 w-8 rounded-full bg-[#c00101]"></div>
+                        <div className="h-2 w-8 rounded-full bg-[#c00101]"></div>
                         <div className="h-2 w-8 rounded-full bg-gray-200 dark:bg-gray-800"></div>
                     </div>
 
@@ -113,8 +118,8 @@ export default function RecipientPage() {
                                             className="cursor-pointer overflow-hidden rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition-all hover:border-indigo-100 hover:shadow-md dark:border-gray-800 dark:bg-gray-900"
                                         >
                                             <div className="flex items-center gap-4">
-                                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-950 dark:to-purple-950">
-                                                    <span className="text-lg font-bold text-indigo-700 dark:text-indigo-400">
+                                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-red-100 to-rose-100 dark:from-red-950 dark:to-rose-950">
+                                                    <span className="text-lg font-bold text-[#c00101] dark:text-red-400">
                                                         {rec.name.charAt(0)}
                                                     </span>
                                                 </div>
@@ -136,10 +141,10 @@ export default function RecipientPage() {
 
                                 <Button
                                     variant="outline"
-                                    className="w-full justify-start gap-4 rounded-2xl border-dashed py-8 text-indigo-600 hover:border-indigo-200 hover:bg-indigo-50 dark:hover:bg-indigo-950/20"
+                                    className="w-full justify-start gap-4 rounded-2xl border-dashed py-8 text-[#c00101] hover:border-red-200 hover:bg-red-50 dark:hover:bg-red-950/20"
                                     onClick={() => setIsAddingRecipient(true)}
                                 >
-                                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100 dark:bg-indigo-950">
+                                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100 dark:bg-red-950">
                                         <Plus className="h-5 w-5" />
                                     </div>
                                     <span className="text-lg font-semibold">New Recipient</span>
@@ -182,7 +187,7 @@ export default function RecipientPage() {
                         />
                     </div>
                     <Button
-                        className="w-full bg-indigo-600 hover:bg-indigo-700 mt-4"
+                        className="w-full bg-[#c00101] hover:bg-[#a00101] mt-4"
                         onClick={handleAddRecipient}
                         disabled={!newRecipientName || !newRecipientBank || !newRecipientAccount}
                     >

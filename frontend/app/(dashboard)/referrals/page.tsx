@@ -11,7 +11,7 @@ import { Input } from '@/components/ui/input' // Correct import for Input placeh
 
 export default function ReferralsPage() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-indigo-950">
+        <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-rose-50 dark:from-gray-950 dark:via-gray-900 dark:to-red-950">
             {/* Header */}
             <header className="relative border-b border-gray-200/50 bg-white/80 shadow-sm backdrop-blur-xl dark:border-gray-800/50 dark:bg-gray-900/80">
                 <div className="container mx-auto px-4">
@@ -22,7 +22,7 @@ export default function ReferralsPage() {
                                 Dashboard
                             </Button>
                         </Link>
-                        <h1 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                        <h1 className="text-2xl font-bold bg-gradient-to-r from-[#c00101] to-[#8f0101] bg-clip-text text-transparent">
                             Invite Friends
                         </h1>
                         <div className="w-24" />
@@ -37,11 +37,11 @@ export default function ReferralsPage() {
                         animate={{ opacity: 1, scale: 1 }}
                         className="mb-8"
                     >
-                        <div className="mx-auto mb-6 flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 p-8 shadow-inner dark:from-indigo-900/40 dark:to-purple-900/40">
-                            <Gift className="h-16 w-16 text-indigo-600 dark:text-indigo-400" />
+                        <div className="mx-auto mb-6 flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-red-100 to-rose-100 p-8 shadow-inner dark:from-red-900/40 dark:to-rose-900/40">
+                            <Gift className="h-16 w-16 text-[#c00101] dark:text-red-400" />
                         </div>
                         <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
-                            Give <span className="text-indigo-600">$20</span>, Get <span className="text-purple-600">$20</span>
+                            Give <span className="text-[#c00101]">$20</span>, Get <span className="text-[#8f0101]">$20</span>
                         </h2>
                         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
                             Invite your friends to SendMoney. When they send their first $100, you both get a $20 bonus!
@@ -64,7 +64,7 @@ export default function ReferralsPage() {
                                         <Copy className="h-5 w-5" />
                                     </Button>
                                 </div>
-                                <Button className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 py-6 text-lg font-bold shadow-lg shadow-indigo-500/25 transition-shadow hover:shadow-indigo-500/40">
+                                <Button className="w-full bg-gradient-to-r from-[#c00101] to-[#8f0101] py-6 text-lg font-bold shadow-lg shadow-[#c00101]/25 transition-shadow hover:shadow-[#c00101]/40">
                                     <Share2 className="mr-2 h-5 w-5" />
                                     Share Link
                                 </Button>
@@ -80,8 +80,8 @@ export default function ReferralsPage() {
                         >
                             <Card className="border-0 shadow-lg">
                                 <CardContent className="flex flex-col items-center p-6 text-center">
-                                    <div className="mb-4 rounded-full bg-indigo-100 p-3 dark:bg-indigo-900/30">
-                                        <Users className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />
+                                    <div className="mb-4 rounded-full bg-red-100 p-3 dark:bg-red-900/30">
+                                        <Users className="h-6 w-6 text-[#c00101] dark:text-red-400" />
                                     </div>
                                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white">12</h3>
                                     <p className="text-sm text-gray-500">Friends Invited</p>
@@ -96,8 +96,8 @@ export default function ReferralsPage() {
                         >
                             <Card className="border-0 shadow-lg">
                                 <CardContent className="flex flex-col items-center p-6 text-center">
-                                    <div className="mb-4 rounded-full bg-purple-100 p-3 dark:bg-purple-900/30">
-                                        <Coins className="h-6 w-6 text-purple-600 dark:text-purple-400" />
+                                    <div className="mb-4 rounded-full bg-rose-100 p-3 dark:bg-rose-900/30">
+                                        <Coins className="h-6 w-6 text-[#8f0101] dark:text-rose-400" />
                                     </div>
                                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white">$240</h3>
                                     <p className="text-sm text-gray-500">Earned so far</p>

@@ -37,10 +37,10 @@ export default function ProfilePage() {
                 {/* Avatar Section */}
                 <div className="flex flex-col items-center gap-4">
                     <div className="relative">
-                        <div className="h-24 w-24 rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center text-3xl font-bold text-indigo-600 dark:from-indigo-900 dark:to-purple-900 dark:text-indigo-300">
+                        <div className="h-24 w-24 rounded-full bg-gradient-to-br from-red-100 to-rose-100 flex items-center justify-center text-3xl font-bold text-[#c00101] dark:from-red-900 dark:to-rose-900 dark:text-red-300">
                             JD
                         </div>
-                        <button className="absolute bottom-0 right-0 rounded-full bg-indigo-600 p-2 text-white shadow-lg hover:bg-indigo-700">
+                        <button className="absolute bottom-0 right-0 rounded-full bg-[#c00101] p-2 text-white shadow-lg hover:bg-[#a00101]">
                             <Camera className="h-4 w-4" />
                         </button>
                     </div>
@@ -109,7 +109,7 @@ export default function ProfilePage() {
                                 <span className="font-medium">$5,000 / $10,000</span>
                             </div>
                             <div className="h-2 w-full rounded-full bg-gray-100 dark:bg-gray-800">
-                                <div className="h-2 w-1/2 rounded-full bg-indigo-600" />
+                                <div className="h-2 w-1/2 rounded-full bg-[#c00101]" />
                             </div>
                         </div>
                         <div className="space-y-2">
@@ -118,7 +118,7 @@ export default function ProfilePage() {
                                 <span className="font-medium">$12,450 / $50,000</span>
                             </div>
                             <div className="h-2 w-full rounded-full bg-gray-100 dark:bg-gray-800">
-                                <div className="h-2 w-1/4 rounded-full bg-purple-600" />
+                                <div className="h-2 w-1/4 rounded-full bg-[#8f0101]" />
                             </div>
                         </div>
 
@@ -133,7 +133,7 @@ export default function ProfilePage() {
 
                 <div className="flex gap-4 pt-4">
                     <Button variant="outline" className="w-full" onClick={() => window.history.back()}>Cancel</Button>
-                    <Button className="w-full bg-indigo-600 hover:bg-indigo-700" onClick={handleSave} disabled={isLoading}>
+                    <Button className="w-full bg-[#c00101] hover:bg-[#a00101]" onClick={handleSave} disabled={isLoading}>
                         {isLoading ? 'Saving...' : 'Save Changes'}
                     </Button>
                 </div>

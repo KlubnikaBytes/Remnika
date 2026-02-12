@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight, Send, Users, History, Settings, TrendingUp, Clock } from 'lucide-react'
+import { ArrowRight, Send, Users, History, Settings, TrendingUp, Clock, LogOut } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -19,16 +19,16 @@ export default function DashboardPage() {
     ]
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-indigo-950">
+        <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-rose-50 dark:from-gray-950 dark:via-gray-900 dark:to-red-950">
             {/* Animated Background */}
             <div className="pointer-events-none fixed inset-0 overflow-hidden">
                 <motion.div
-                    className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-gradient-to-br from-blue-400/20 to-purple-400/20 blur-3xl"
+                    className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-gradient-to-br from-red-400/20 to-orange-400/20 blur-3xl"
                     animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
                     transition={{ duration: 20, repeat: Infinity }}
                 />
                 <motion.div
-                    className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-gradient-to-br from-indigo-400/20 to-pink-400/20 blur-3xl"
+                    className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-gradient-to-br from-rose-400/20 to-red-400/20 blur-3xl"
                     animate={{ scale: [1.2, 1, 1.2], rotate: [90, 0, 90] }}
                     transition={{ duration: 25, repeat: Infinity }}
                 />
@@ -38,17 +38,20 @@ export default function DashboardPage() {
             <header className="relative border-b border-gray-200/50 bg-white/80 shadow-sm backdrop-blur-xl dark:border-gray-800/50 dark:bg-gray-900/80">
                 <div className="container mx-auto px-4">
                     <div className="flex h-20 items-center justify-between">
-                        <h1 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                        <h1 className="text-2xl font-bold bg-gradient-to-r from-[#c00101] to-[#8f0101] bg-clip-text text-transparent">
                             Home
                         </h1>
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-2 sm:gap-4">
                             <Link href="/settings">
                                 <Button variant="ghost" size="sm">
                                     <Settings className="h-5 w-5" />
                                 </Button>
                             </Link>
                             <Link href="/login">
-                                <Button variant="outline">Logout</Button>
+                                <Button variant="outline" size="sm" className="px-2 sm:px-4">
+                                    <LogOut className="h-5 w-5 sm:hidden" />
+                                    <span className="hidden sm:inline">Logout</span>
+                                </Button>
                             </Link>
                         </div>
                     </div>
@@ -87,7 +90,7 @@ export default function DashboardPage() {
                         <Link href="/send-money">
                             <Card className="group cursor-pointer overflow-hidden border-0 bg-white/60 backdrop-blur-sm transition-all hover:-translate-y-2 hover:shadow-2xl dark:bg-gray-900/60">
                                 <CardContent className="flex items-center gap-4 p-6">
-                                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 shadow-lg">
+                                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-[#c00101] to-[#8f0101] shadow-lg">
                                         <Send className="h-7 w-7 text-white" />
                                     </div>
                                     <div>
@@ -102,7 +105,7 @@ export default function DashboardPage() {
                         <Link href="/recipients">
                             <Card className="group cursor-pointer overflow-hidden border-0 bg-white/60 backdrop-blur-sm transition-all hover:-translate-y-2 hover:shadow-2xl dark:bg-gray-900/60">
                                 <CardContent className="flex items-center gap-4 p-6">
-                                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 shadow-lg">
+                                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-gray-700 to-gray-600 shadow-lg">
                                         <Users className="h-7 w-7 text-white" />
                                     </div>
                                     <div>
@@ -117,7 +120,7 @@ export default function DashboardPage() {
                         <Link href="/transactions">
                             <Card className="group cursor-pointer overflow-hidden border-0 bg-white/60 backdrop-blur-sm transition-all hover:-translate-y-2 hover:shadow-2xl dark:bg-gray-900/60">
                                 <CardContent className="flex items-center gap-4 p-6">
-                                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 shadow-lg">
+                                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-red-500 to-orange-500 shadow-lg">
                                         <History className="h-7 w-7 text-white" />
                                     </div>
                                     <div>
@@ -153,8 +156,8 @@ export default function DashboardPage() {
                                         className="flex items-center justify-between border-b border-gray-200 p-6 transition-colors last:border-0 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-900/50"
                                     >
                                         <div className="flex items-center gap-4">
-                                            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-950 dark:to-purple-950">
-                                                <TrendingUp className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />
+                                            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-100 to-rose-100 dark:from-red-950 dark:to-rose-950">
+                                                <TrendingUp className="h-6 w-6 text-[#c00101] dark:text-red-400" />
                                             </div>
                                             <div>
                                                 <p className="font-semibold text-gray-900 dark:text-white">{tx.recipient}</p>

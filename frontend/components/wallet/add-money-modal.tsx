@@ -81,27 +81,27 @@ export function AddMoneyModal({ isOpen, onClose, currentBalance }: AddMoneyModal
                                 <button
                                     onClick={() => setMethod('card')}
                                     className={`relative flex flex-col items-center gap-2 rounded-xl border-2 p-4 transition-all ${method === 'card'
-                                            ? 'border-indigo-600 bg-indigo-50 text-indigo-700 dark:bg-indigo-900/20 dark:text-indigo-300'
-                                            : 'border-gray-200 hover:border-gray-300 dark:border-gray-800 dark:hover:border-gray-700'
+                                        ? 'border-[#c00101] bg-red-50 text-[#c00101] dark:bg-red-900/20 dark:text-red-300'
+                                        : 'border-gray-200 hover:border-gray-300 dark:border-gray-800 dark:hover:border-gray-700'
                                         }`}
                                 >
                                     <CreditCard className="h-6 w-6" />
                                     <span className="text-sm font-bold">Card</span>
                                     {method === 'card' && (
-                                        <div className="absolute top-2 right-2 h-2 w-2 rounded-full bg-indigo-600" />
+                                        <div className="absolute top-2 right-2 h-2 w-2 rounded-full bg-[#c00101]" />
                                     )}
                                 </button>
                                 <button
                                     onClick={() => setMethod('bank')}
                                     className={`relative flex flex-col items-center gap-2 rounded-xl border-2 p-4 transition-all ${method === 'bank'
-                                            ? 'border-indigo-600 bg-indigo-50 text-indigo-700 dark:bg-indigo-900/20 dark:text-indigo-300'
-                                            : 'border-gray-200 hover:border-gray-300 dark:border-gray-800 dark:hover:border-gray-700'
+                                        ? 'border-[#c00101] bg-red-50 text-[#c00101] dark:bg-red-900/20 dark:text-red-300'
+                                        : 'border-gray-200 hover:border-gray-300 dark:border-gray-800 dark:hover:border-gray-700'
                                         }`}
                                 >
                                     <Building className="h-6 w-6" />
                                     <span className="text-sm font-bold">Bank Transfer</span>
                                     {method === 'bank' && (
-                                        <div className="absolute top-2 right-2 h-2 w-2 rounded-full bg-indigo-600" />
+                                        <div className="absolute top-2 right-2 h-2 w-2 rounded-full bg-[#c00101]" />
                                     )}
                                 </button>
                             </div>
@@ -117,14 +117,14 @@ export function AddMoneyModal({ isOpen, onClose, currentBalance }: AddMoneyModal
                                     <p className="text-sm font-bold text-gray-900 dark:text-white">•••• 4242</p>
                                     <p className="text-xs text-gray-500">Expires 12/28</p>
                                 </div>
-                                <Button variant="ghost" size="sm" className="text-indigo-600 hover:text-indigo-700">
+                                <Button variant="ghost" size="sm" className="text-[#c00101] hover:text-[#a00101]">
                                     Change
                                 </Button>
                             </div>
                         )}
 
                         <Button
-                            className="w-full rounded-xl bg-indigo-600 py-6 text-lg font-semibold hover:bg-indigo-700"
+                            className="w-full rounded-xl bg-[#c00101] py-6 text-lg font-semibold hover:bg-[#a00101]"
                             onClick={handleAddMoney}
                             disabled={!amount || parseFloat(amount) <= 0 || isLoading}
                         >

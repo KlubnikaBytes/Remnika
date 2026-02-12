@@ -30,8 +30,8 @@ export function MainNav() {
             <div className="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-72 lg:flex-col">
                 <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white/50 px-6 pb-4 backdrop-blur-xl dark:border-gray-800 dark:bg-gray-900/50">
                     <div className="flex h-16 shrink-0 items-center">
-                        <h1 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                            TapTap Send
+                        <h1 className="text-2xl font-bold bg-gradient-to-r from-[#c00101] to-[#8f0101] bg-clip-text text-transparent">
+                            Remnika
                         </h1>
                     </div>
                     <nav className="flex flex-1 flex-col">
@@ -46,14 +46,14 @@ export function MainNav() {
                                                     href={item.href}
                                                     className={cn(
                                                         isActive
-                                                            ? 'bg-indigo-50 text-indigo-600 dark:bg-indigo-900/20 dark:text-indigo-400'
-                                                            : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-indigo-400',
+                                                            ? 'bg-[#c00101]/10 text-[#c00101] dark:bg-[#c00101]/20 dark:text-[#c00101]'
+                                                            : 'text-gray-700 hover:bg-gray-50 hover:text-[#c00101] dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-[#c00101]',
                                                         'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 transition-all'
                                                     )}
                                                 >
                                                     <item.icon
                                                         className={cn(
-                                                            isActive ? 'text-indigo-600 dark:text-indigo-400' : 'text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400',
+                                                            isActive ? 'text-[#c00101] dark:text-[#c00101]' : 'text-gray-400 group-hover:text-[#c00101] dark:group-hover:text-[#c00101]',
                                                             'h-6 w-6 shrink-0'
                                                         )}
                                                         aria-hidden="true"
@@ -70,14 +70,14 @@ export function MainNav() {
                                     href="/notifications"
                                     className={cn(
                                         pathname === '/notifications'
-                                            ? 'bg-indigo-50 text-indigo-600 dark:bg-indigo-900/20 dark:text-indigo-400'
-                                            : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-indigo-400',
+                                            ? 'bg-[#c00101]/10 text-[#c00101] dark:bg-[#c00101]/20 dark:text-[#c00101]'
+                                            : 'text-gray-700 hover:bg-gray-50 hover:text-[#c00101] dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-[#c00101]',
                                         'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 transition-all'
                                     )}
                                 >
                                     <Bell
                                         className={cn(
-                                            pathname === '/notifications' ? 'text-indigo-600 dark:text-indigo-400' : 'text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400',
+                                            pathname === '/notifications' ? 'text-[#c00101] dark:text-[#c00101]' : 'text-gray-400 group-hover:text-[#c00101] dark:group-hover:text-[#c00101]',
                                             'h-6 w-6 shrink-0'
                                         )}
                                         aria-hidden="true"
@@ -102,13 +102,13 @@ export function MainNav() {
                                 className={cn(
                                     "flex flex-col items-center gap-1 rounded-xl p-2 transition-all",
                                     isActive
-                                        ? "text-indigo-600 dark:text-indigo-400"
-                                        : "text-gray-500 hover:text-indigo-600 dark:text-gray-500 dark:hover:text-indigo-400"
+                                        ? "text-[#c00101] dark:text-[#c00101]"
+                                        : "text-gray-500 hover:text-[#c00101] dark:text-gray-500 dark:hover:text-[#c00101]"
                                 )}
                             >
                                 <div className={cn(
                                     "rounded-full p-1 transition-all",
-                                    isActive && "bg-indigo-100 dark:bg-indigo-900/30"
+                                    isActive && "bg-[#c00101]/10 dark:bg-[#c00101]/30"
                                 )}>
                                     <item.icon className="h-6 w-6" />
                                 </div>

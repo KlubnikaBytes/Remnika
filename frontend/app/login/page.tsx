@@ -20,16 +20,16 @@ export default function LoginPage() {
     }
 
     return (
-        <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-indigo-950">
+        <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-red-50 via-white to-rose-50 dark:from-gray-950 dark:via-gray-900 dark:to-red-950">
             {/* Animated Background */}
             <div className="pointer-events-none fixed inset-0 overflow-hidden">
                 <motion.div
-                    className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-gradient-to-br from-blue-400/20 to-purple-400/20 blur-3xl"
+                    className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-gradient-to-br from-red-400/20 to-orange-400/20 blur-3xl"
                     animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
                     transition={{ duration: 20, repeat: Infinity }}
                 />
                 <motion.div
-                    className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-gradient-to-br from-indigo-400/20 to-pink-400/20 blur-3xl"
+                    className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-gradient-to-br from-rose-400/20 to-red-400/20 blur-3xl"
                     animate={{ scale: [1.2, 1, 1.2], rotate: [90, 0, 90] }}
                     transition={{ duration: 25, repeat: Infinity }}
                 />
@@ -41,10 +41,10 @@ export default function LoginPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <Card className="overflow-hidden border-0 shadow-2xl shadow-indigo-500/20">
-                        <CardHeader className="bg-gradient-to-br from-indigo-600 to-purple-600 p-8 text-white">
+                    <Card className="overflow-hidden border-0 shadow-2xl shadow-[#c00101]/20">
+                        <CardHeader className="bg-gradient-to-br from-[#c00101] to-[#8f0101] p-8 text-white">
                             <CardTitle className="text-3xl">Welcome Back</CardTitle>
-                            <p className="mt-2 text-indigo-100">Log in to your account</p>
+                            <p className="mt-2 text-white/90">Log in to your account</p>
                         </CardHeader>
                         <CardContent className="p-8">
                             <form onSubmit={handleSubmit} className="space-y-6">
@@ -90,7 +90,7 @@ export default function LoginPage() {
 
                                 <Button
                                     type="submit"
-                                    className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 py-6 text-lg font-semibold shadow-lg shadow-indigo-500/50 hover:shadow-xl"
+                                    className="w-full bg-gradient-to-r from-[#c00101] to-[#8f0101] py-6 text-lg font-semibold shadow-lg shadow-[#c00101]/50 hover:shadow-xl hover:from-[#a00101] hover:to-[#6f0000]"
                                 >
                                     <span className="flex items-center gap-2">
                                         Login
@@ -101,7 +101,7 @@ export default function LoginPage() {
                                 <div className="text-center">
                                     <p className="text-sm text-gray-600 dark:text-gray-400">
                                         Don't have an account?{' '}
-                                        <Link href="/signup" className="font-semibold text-indigo-600 hover:text-indigo-700">
+                                        <Link href="/signup" className="font-semibold text-[#c00101] hover:text-[#8f0101]">
                                             Sign up
                                         </Link>
                                     </p>

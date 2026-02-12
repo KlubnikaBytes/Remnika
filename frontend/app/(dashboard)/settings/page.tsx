@@ -9,11 +9,11 @@ import { Button } from '@/components/ui/button'
 
 export default function SettingsPage() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-indigo-950">
+        <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-rose-50 dark:from-gray-950 dark:via-gray-900 dark:to-red-950">
             {/* Animated Background */}
             <div className="pointer-events-none fixed inset-0 overflow-hidden">
                 <motion.div
-                    className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-gradient-to-br from-blue-400/20 to-purple-400/20 blur-3xl"
+                    className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-gradient-to-br from-red-400/20 to-orange-400/20 blur-3xl"
                     animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
                     transition={{ duration: 20, repeat: Infinity }}
                 />
@@ -22,17 +22,17 @@ export default function SettingsPage() {
             {/* Header */}
             <header className="relative border-b border-gray-200/50 bg-white/80 shadow-sm backdrop-blur-xl dark:border-gray-800/50 dark:bg-gray-900/80">
                 <div className="container mx-auto px-4">
-                    <div className="flex h-20 items-center justify-between">
+                    <div className="grid h-20 grid-cols-[auto_1fr_auto] items-center gap-4">
                         <Link href="/dashboard">
-                            <Button variant="ghost">
-                                <ArrowLeft className="mr-2 h-5 w-5" />
-                                Dashboard
+                            <Button variant="ghost" size="sm" className="pl-2 pr-2 sm:pl-4 sm:pr-4">
+                                <ArrowLeft className="h-5 w-5 sm:mr-2" />
+                                <span className="hidden sm:inline">Dashboard</span>
                             </Button>
                         </Link>
-                        <h1 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                        <h1 className="text-center text-xl font-bold bg-gradient-to-r from-[#c00101] to-[#8f0101] bg-clip-text text-transparent sm:text-2xl">
                             Settings
                         </h1>
-                        <div className="w-24" />
+                        <div className="w-10 sm:w-24" />
                     </div>
                 </div>
             </header>
@@ -44,7 +44,7 @@ export default function SettingsPage() {
                         <Link href="/kyc">
                             <Card className="h-full border-0 shadow-lg transition-transform hover:scale-[1.02]">
                                 <CardContent className="flex items-center gap-4 p-6">
-                                    <div className="rounded-full bg-indigo-100 p-3 text-indigo-600 dark:bg-indigo-900/30">
+                                    <div className="rounded-full bg-red-100 p-3 text-[#c00101] dark:bg-red-900/30">
                                         <Shield className="h-6 w-6" />
                                     </div>
                                     <div>
@@ -58,7 +58,7 @@ export default function SettingsPage() {
                         <Link href="/referrals">
                             <Card className="h-full border-0 shadow-lg transition-transform hover:scale-[1.02]">
                                 <CardContent className="flex items-center gap-4 p-6">
-                                    <div className="rounded-full bg-purple-100 p-3 text-purple-600 dark:bg-purple-900/30">
+                                    <div className="rounded-full bg-orange-100 p-3 text-orange-600 dark:bg-orange-900/30">
                                         <Globe2 className="h-6 w-6" />
                                     </div>
                                     <div>
@@ -72,7 +72,7 @@ export default function SettingsPage() {
                         <Link href="/support" className="md:col-span-2">
                             <Card className="h-full border-0 shadow-lg transition-transform hover:scale-[1.02]">
                                 <CardContent className="flex items-center gap-4 p-6">
-                                    <div className="rounded-full bg-green-100 p-3 text-green-600 dark:bg-green-900/30">
+                                    <div className="rounded-full bg-gray-100 p-3 text-gray-600 dark:bg-gray-900/30">
                                         <Bell className="h-6 w-6" />
                                     </div>
                                     <div>
@@ -86,7 +86,7 @@ export default function SettingsPage() {
                         <Link href="/settings/security">
                             <Card className="h-full border-0 shadow-lg transition-transform hover:scale-[1.02]">
                                 <CardContent className="flex items-center gap-4 p-6">
-                                    <div className="rounded-full bg-orange-100 p-3 text-orange-600 dark:bg-orange-900/30">
+                                    <div className="rounded-full bg-rose-100 p-3 text-rose-600 dark:bg-rose-900/30">
                                         <Lock className="h-6 w-6" />
                                     </div>
                                     <div>

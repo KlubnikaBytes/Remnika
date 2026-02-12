@@ -4,13 +4,12 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowLeft, ShieldCheck, Upload, Check, Camera, FileText } from 'lucide-react'
+import { ArrowLeft, ShieldCheck, Check, Camera } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 
 export default function KYCPage() {
     const [step, setStep] = useState(1)
-    const [file, setFile] = useState<File | null>(null)
     const [isUploading, setIsUploading] = useState(false)
 
     const handleUpload = () => {
@@ -47,7 +46,7 @@ export default function KYCPage() {
                             exit={{ opacity: 0, x: -20 }}
                         >
                             <div className="mb-8 text-center">
-                                <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30">
+                                <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-red-100 text-[#c00101] dark:bg-red-900/30">
                                     <ShieldCheck className="h-12 w-12" />
                                 </div>
                                 <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Verify your identity</h1>
@@ -61,11 +60,11 @@ export default function KYCPage() {
                                     <h3 className="font-semibold">Accepted Documents:</h3>
                                     <ul className="list-inside list-disc space-y-2 text-sm text-gray-600 dark:text-gray-400">
                                         <li>Passport</li>
-                                        <li>Driver's License</li>
+                                        <li>Driver&apos;s License</li>
                                         <li>National ID Card</li>
                                     </ul>
                                     <Button
-                                        className="w-full bg-indigo-600 py-6 text-lg hover:bg-indigo-700 mt-4"
+                                        className="w-full bg-[#c00101] py-6 text-lg hover:bg-[#a00101] mt-4"
                                         onClick={() => setStep(2)}
                                     >
                                         Start Verification
@@ -89,7 +88,7 @@ export default function KYCPage() {
 
                             <Card className="relative border-2 border-dashed border-gray-300 bg-gray-50 p-8 text-center hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-900 dark:hover:bg-gray-800">
                                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-sm dark:bg-gray-800">
-                                    <Camera className="h-8 w-8 text-indigo-600" />
+                                    <Camera className="h-8 w-8 text-[#c00101]" />
                                 </div>
                                 <p className="mb-2 font-medium">Click to upload or take photo</p>
                                 <p className="text-xs text-gray-500">JPG, PNG or PDF (max 5MB)</p>
@@ -97,7 +96,6 @@ export default function KYCPage() {
                                     type="file"
                                     className="absolute inset-0 cursor-pointer opacity-0"
                                     onChange={() => {
-                                        setFile(new File([""], "mock.jpg"))
                                         handleUpload()
                                     }}
                                 />
@@ -105,8 +103,8 @@ export default function KYCPage() {
 
                             {isUploading && (
                                 <div className="mt-8 text-center">
-                                    <div className="mx-auto h-8 w-8 animate-spin rounded-full border-4 border-indigo-600 border-t-transparent" />
-                                    <p className="mt-2 text-sm font-medium text-indigo-600">Verifying...</p>
+                                    <div className="mx-auto h-8 w-8 animate-spin rounded-full border-4 border-[#c00101] border-t-transparent" />
+                                    <p className="mt-2 text-sm font-medium text-[#c00101]">Verifying...</p>
                                 </div>
                             )}
                         </motion.div>
@@ -124,7 +122,7 @@ export default function KYCPage() {
                             </div>
                             <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Verification Pending</h2>
                             <p className="mt-2 text-gray-600 dark:text-gray-400">
-                                We've received your documents. We'll review them and notify you shortly (usually within 5 minutes).
+                                We&apos;ve received your documents. We&apos;ll review them and notify you shortly (usually within 5 minutes).
                             </p>
                             <Link href="/dashboard">
                                 <Button className="mt-8 w-full bg-gray-900 py-6 hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200">
