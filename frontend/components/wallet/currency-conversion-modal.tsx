@@ -7,6 +7,7 @@ import { CountrySelector, COUNTRIES, Country } from '@/components/ui/country-sel
 import { Button } from '@/components/ui/button'
 import { ArrowDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useExchangeRates } from '@/hooks/use-exchange-rates'
 import { WalletBalance } from '@/hooks/use-wallet'
 
 interface CurrencyConversionModalProps {
@@ -24,9 +25,12 @@ export function CurrencyConversionModal({ isOpen, onClose, sourceBalance }: Curr
     const [isLoading, setIsLoading] = useState(false)
     const [success, setSuccess] = useState(false)
 
-    // Mock conversion rate
-    const rate = 1580.50 // Mock rate for USD to NGN
-    const convertedAmount = amount ? (parseFloat(amount) * rate).toFixed(2) : '0.00'
+    // Fetch real-time rates
+    const { rates, isLoading: isRatesLoading } = useExchangeRates(sourceBalance.currency)
+    const rate = rates ? (rates[targetCountry.currency] || 0) : 0
+
+    // Calculate converted amount
+    const convertedAmount = (amount && rate) ? (parseFloat(amount) * rate).toFixed(2) : '0.00'
 
     const handleConvert = () => {
         setIsLoading(true)
@@ -109,7 +113,11 @@ export function CurrencyConversionModal({ isOpen, onClose, sourceBalance }: Curr
                                     />
                                 </div>
                                 <div className="flex-1 text-right text-3xl font-bold text-gray-900 dark:text-white">
-                                    {targetCountry.symbol}{convertedAmount}
+                                    {isRatesLoading ? (
+                                        <span className="text-gray-400 text-lg">Loading rate...</span>
+                                    ) : (
+                                        `${targetCountry.symbol}${convertedAmount}`
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -117,13 +125,15 @@ export function CurrencyConversionModal({ isOpen, onClose, sourceBalance }: Curr
                         {/* Rate Info */}
                         <div className="flex items-center justify-between rounded-xl bg-red-50 px-4 py-3 text-sm text-[#8f0101] dark:bg-red-950/30 dark:text-red-300">
                             <span className="font-medium">Exchange Rate</span>
-                            <span className="font-bold">1 {sourceCountry.currency} = {rate} {targetCountry.currency}</span>
+                            <span className="font-bold">
+                                {isRatesLoading ? 'Loading...' : `1 ${sourceCountry.currency} = ${rate.toFixed(4)} ${targetCountry.currency}`}
+                            </span>
                         </div>
 
                         <Button
                             className="w-full rounded-xl bg-[#c00101] py-6 text-lg font-semibold hover:bg-[#a00101]"
                             onClick={handleConvert}
-                            disabled={!amount || parseFloat(amount) <= 0 || isLoading}
+                            disabled={!amount || parseFloat(amount) <= 0 || isLoading || isRatesLoading || !rate}
                         >
                             {isLoading ? (
                                 <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-transparent" />

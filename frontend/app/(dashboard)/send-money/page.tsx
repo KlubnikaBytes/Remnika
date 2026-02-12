@@ -12,18 +12,7 @@ import { CountrySelector, COUNTRIES } from '@/components/ui/country-selector'
 import { useSendMoneyStore } from '@/hooks/use-send-money-store'
 import { useRouter } from 'next/navigation'
 
-// Mock exchange rates
-const EXCHANGE_RATES: Record<string, Record<string, number>> = {
-    USD: { GBP: 0.79, EUR: 0.92, CAD: 1.35, NGN: 1580, INR: 83.12, PHP: 56.25, KES: 129.50, MXN: 17.05 },
-    GBP: { USD: 1.27, EUR: 1.17, CAD: 1.71, NGN: 2005, INR: 105.50, PHP: 71.35, KES: 164.30, MXN: 21.65 },
-    EUR: { USD: 1.09, GBP: 0.86, CAD: 1.46, NGN: 1721, INR: 90.60, PHP: 61.30, KES: 141.20, MXN: 18.59 },
-    CAD: { USD: 0.74, GBP: 0.58, EUR: 0.68, NGN: 1170, INR: 61.57, PHP: 41.67, KES: 95.93, MXN: 12.63 },
-    NGN: { USD: 0.00063, GBP: 0.0005, EUR: 0.00058, CAD: 0.00085, INR: 0.053, PHP: 0.036, KES: 0.082, MXN: 0.011 },
-    INR: { USD: 0.012, GBP: 0.0095, EUR: 0.011, CAD: 0.016, NGN: 18.98, PHP: 0.677, KES: 1.558, MXN: 0.205 },
-    PHP: { USD: 0.018, GBP: 0.014, EUR: 0.016, CAD: 0.024, NGN: 28.04, INR: 1.477, KES: 2.302, MXN: 0.303 },
-    KES: { USD: 0.0077, GBP: 0.0061, EUR: 0.0071, CAD: 0.010, NGN: 12.18, INR: 0.642, PHP: 0.434, MXN: 0.132 },
-    MXN: { USD: 0.059, GBP: 0.046, EUR: 0.054, CAD: 0.079, NGN: 92.70, INR: 4.878, PHP: 3.300, KES: 7.586 },
-}
+
 
 interface Quote {
     quoteId: string
@@ -39,6 +28,10 @@ interface Quote {
     expiresAt: number
 }
 
+import { useExchangeRates } from '@/hooks/use-exchange-rates'
+
+// ... imports remain the same
+
 export default function SendMoneyPage() {
     const router = useRouter()
     const {
@@ -52,25 +45,28 @@ export default function SendMoneyPage() {
     const [isLoadingQuote, setIsLoadingQuote] = useState(false)
     const [secondsRemaining, setSecondsRemaining] = useState(0)
 
+    // Fetch real-time rates
+    const { rates, isLoading: isRatesLoading } = useExchangeRates(sourceCountry?.currency || 'USD')
+
     // Initialize countries if not set in store
     useEffect(() => {
         if (!sourceCountry) setSourceCountry(COUNTRIES[0])
         if (!targetCountry) setTargetCountry(COUNTRIES[4])
     }, [])
 
-
-
     // Generate quote when amount changes
     useEffect(() => {
-        if (!amount || parseFloat(amount) <= 0 || !sourceCountry || !targetCountry) {
+        if (!amount || parseFloat(amount) <= 0 || !sourceCountry || !targetCountry || !rates) {
             setQuote(null)
             return
         }
 
         setIsLoadingQuote(true)
+        // Simulate calculation delay for UX
         const timer = setTimeout(() => {
             const sourceAmt = parseFloat(amount)
-            const rate = EXCHANGE_RATES[sourceCountry.currency]?.[targetCountry.currency] || 1
+            // Use real-time rate
+            const rate = rates[targetCountry.currency] || 1
             const transferFee = sourceAmt * 0.01 // 1% fee
             const serviceFee = 2.99
             const totalFees = transferFee + serviceFee
@@ -91,10 +87,10 @@ export default function SendMoneyPage() {
             })
             setSecondsRemaining(60)
             setIsLoadingQuote(false)
-        }, 800)
+        }, 500)
 
         return () => clearTimeout(timer)
-    }, [amount, sourceCountry, targetCountry])
+    }, [amount, sourceCountry, targetCountry, rates])
 
     // Quote expiry countdown
     useEffect(() => {
