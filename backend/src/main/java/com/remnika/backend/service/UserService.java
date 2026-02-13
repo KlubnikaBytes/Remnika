@@ -152,4 +152,13 @@ public class UserService {
 
         sessionRepository.save(session);
     }
+
+    public void logoutUser(String token) {
+        // 1.2.4 Process: Locate the session and invalidate it
+        Session session = sessionRepository.findByToken(token)
+                .orElseThrow(() -> new RuntimeException("Session not found or already logged out"));
+
+        session.setActive(false);
+        sessionRepository.save(session);
+    }
 }
